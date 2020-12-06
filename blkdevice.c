@@ -159,6 +159,7 @@ static ssize_t new_sectors_store(struct kobject *kobj,
 		tmp = NULL;
 		printk(KERN_ALERT "Size changed\n");
 	}
+	return count;
 }
 static struct kobj_attribute new_sectors_attribute = 
 __ATTR(nsectors, S_IRUGO | S_IWUSR, new_sectors_show, new_sectors_store);
