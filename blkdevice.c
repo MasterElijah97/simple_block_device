@@ -140,7 +140,7 @@ static ssize_t new_sectors_show(struct kobject *kobj,
 
 static ssize_t new_sectors_store(struct kobject *kobj, 
                                  struct kobj_attribute *attr,
-                                 char *buf, 
+                                 const char *buf, 
                                  size_t count)
 {
 	sscanf(buf, "%d", &new_sectors);
@@ -179,7 +179,7 @@ static ssize_t permissions_show(struct kobject *kobj,
 
 static ssize_t permissions_store(struct kobject *kobj, 
                                  struct kobj_attribute *attr,
-                                 char *buf, 
+                                 const char *buf, 
                                  size_t count)
 {
 	sscanf(buf, "%du", &permissions);
