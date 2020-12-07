@@ -45,7 +45,7 @@ static int major_result;
 /*
  * Struct to describe device
  */
-static struct blk_device {
+struct blk_device {
 	unsigned long size; /* in bytes */
 	spinlock_t lock;
 	u8 *data;
