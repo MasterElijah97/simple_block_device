@@ -15,7 +15,7 @@
 /* 
  * User's NAME of device
  */
-static char* name = NULL;
+static char* name;
 module_param(name, charp,  S_IRUGO | S_IWUSR); /* everyone can read, user can write */
 
 /* 
@@ -246,6 +246,7 @@ static int __init blockdevice_init(void)
 	 * use "blkdevice" by default name and buffer 'name' if user set this param
 	 */
 	if (name == NULL) {
+		name = kmalloc(10, GFP_KERNEL);
 		strcpy(name, "blkdevice");
 	}
 	major_result = register_blkdev(MAJORS, name);
