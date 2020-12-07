@@ -28,7 +28,7 @@ module_param(nsectors, int, S_IRUGO | S_IWUSR); /* everyone can read, user can w
  * Permissiong for read/write operations
  */
 static int permissions = 0;
-module_param(permissions, bool, S_IRUGO | S_IWUSR); /* everyone can read, user can write */
+module_param(permissions, int, S_IRUGO | S_IWUSR); /* everyone can read, user can write */
 
 /*
  * Standard size of sector
