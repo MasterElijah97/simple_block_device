@@ -194,6 +194,8 @@ __ATTR(permissions, S_IRUGO | S_IWUSR, permissions_show, permissions_store);
  */
 static int __init blockdevice_init(void)
 {
+	int error; /* Because ISO C90 forbids declaration and code */
+
 	printk(KERN_ALERT "Module inserted\n");
 
 	/*
@@ -286,7 +288,6 @@ static int __init blockdevice_init(void)
 		goto alloc_disk_fail;
 	}
 
-	int error;
 	error = sysfs_create_file(new_sectors_kobject, &new_sectors_attribute.attr);
 
 	if (error) {
